@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(const BusinessCardApp());
@@ -11,23 +9,24 @@ class BusinessCardApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: const Color(0xff2b475e),
+        backgroundColor: Color(0xff2b475e),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const CircleAvatar(
-              radius: 122,
+            CircleAvatar(
+              radius: 102,
               backgroundColor: Colors.white,
               child: CircleAvatar(
-                radius: 120,
+                radius: 100,
                 backgroundImage: AssetImage(
                   'assets/images/arafa.png',
                 ),
               ),
             ),
-            const Text(
+            Text(
               'Ahmed Arafa',
               style: TextStyle(
                 fontFamily: 'Pacifico',
@@ -35,7 +34,7 @@ class BusinessCardApp extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            const Text(
+            Text(
               'Flutter Developer',
               style: TextStyle(
                 fontSize: 18,
@@ -43,24 +42,42 @@ class BusinessCardApp extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Container(
-                color: Colors.white,
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.phone,
-                      color: Color(0xff2b465d),
-                      size: 32,
-                    ),
-                    Text(
-                      "(+20) 122 614 8457",
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
-                    ),
-                  ],
+            Divider(
+              color: Color(0xff6C8090),
+              thickness: 1,
+              indent: 60,
+              endIndent: 60,
+              height: 10,
+            ),
+            Card(
+              margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: ListTile(
+                leading: Icon(
+                  Icons.phone,
+                  color: Color(0xff2b465d),
+                  size: 32,
+                ),
+                title: Text(
+                  "(+20) 122 614 8457",
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: ListTile(
+                leading: Icon(
+                  Icons.mail_outline,
+                  color: Color(0xff2b465d),
+                  size: 32,
+                ),
+                title: Text(
+                  "ahmed.arafa.fawzy@gmail.com",
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
                 ),
               ),
             ),
