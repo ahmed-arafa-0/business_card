@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -10,13 +11,13 @@ class BusinessCardApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xff2b475e),
+        backgroundColor: const Color(0xff2b475e),
         body: Column(
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: 122,
               backgroundColor: Colors.white,
               child: CircleAvatar(
@@ -26,20 +27,41 @@ class BusinessCardApp extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
+            const Text(
               'Ahmed Arafa',
               style: TextStyle(
                 fontFamily: 'Pacifico',
-                fontSize: 40,
+                fontSize: 32,
                 color: Colors.white,
+              ),
+            ),
+            const Text(
+              'Flutter Developer',
+              style: TextStyle(
+                fontSize: 18,
+                color: Color(0xff6C8090),
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Text(
-              'Flutter Developer',
-              style: TextStyle(
-                fontSize: 20,
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Container(
                 color: Colors.white,
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.phone,
+                      color: Color(0xff2b465d),
+                      size: 32,
+                    ),
+                    Text(
+                      "(+20) 122 614 8457",
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
